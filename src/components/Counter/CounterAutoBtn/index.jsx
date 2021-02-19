@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import CounterAutoBtnSettings from "../CounterAutoBtnSettings";
 
 class CounterAutoBtn extends Component {
   constructor(props) {
@@ -46,34 +47,7 @@ class CounterAutoBtn extends Component {
     
     return (
       <>
-        <div>
-          How time: {time}{" "}
-          <input
-            type="range"
-            name="time"
-            min={interval}
-            max="60"
-            step="1"
-            value={time}
-            onChange={this.handleChengeInterval}
-            disabled={isRunning}
-          />
-          s
-        </div>
-        <div>
-          How often: {interval}
-          <input
-            type="range"
-            name="interval"
-            min="0.5"
-            max="3"
-            step="0.1"
-            value={interval}
-            onChange={this.handleChengeInterval}
-            disabled={isRunning}
-          />{" "}
-          s
-        </div>
+        <CounterAutoBtnSettings interval={interval} isRunning={isRunning} time={time} handleChengeInterval={this.handleChengeInterval}/>
         <button disabled={isRunning} onClick={this.handleAutoClicker}>AutoBtn</button>
       </>
     );

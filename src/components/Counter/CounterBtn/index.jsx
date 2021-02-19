@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import CounterAutoBtn from "../CounterAutoBtn";
+import CounterBtnSettings from "../CounterBtnSettings";
 
 class CounterBtn extends Component {
   constructor(props) {
@@ -40,24 +41,7 @@ class CounterBtn extends Component {
       <>
         <div >
           <div>{counter}</div>
-          <div >
-            add?{" "}
-            <input
-              type="checkbox"
-              checked={isAdd}
-              onChange={this.handleDirection}
-              disabled={isRunning}
-            />
-          </div>
-          <div>
-            Will be {isAdd ? " + " : " - "}:{" "}
-            <input
-              type="number"
-              value={step}
-              onChange={this.handleChengeStep}
-              disabled={isRunning}
-            />
-          </div>
+          <CounterBtnSettings isAdd={isAdd} isRunning={isRunning} handleDirection={this.handleDirection} step={step} handleChengeStep={this.handleChengeStep}/>
           <button disabled={isRunning}  onClick={this.handleIncrement}>Change</button>
         </div>
         <CounterAutoBtn count={this.count} step={step} isRunning={isRunning} changeIsRunning={this.changeIsRunning}/>
