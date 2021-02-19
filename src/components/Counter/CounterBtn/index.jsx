@@ -1,11 +1,15 @@
 import React, { Component } from "react";
 import CounterAutoBtn from "../CounterAutoBtn";
-import CounterBtnSettings from "../CounterBtnSettings";
 
 class CounterBtn extends Component {
   constructor(props) {
     super(props);
-    this.state = { counter: 0, isAdd: true,isRunning: false };
+    this.state = {
+      counter: 0,
+      isAdd: true,
+      isRunning: false,
+      customize: false,
+    };
   }
 
   count = (step) => {
@@ -30,21 +34,33 @@ class CounterBtn extends Component {
     this.setState({ isAdd: checked });
   };
 
-  changeIsRunning =()=>{
-    this.setState((state)=>{return{isRunning: !state.isRunning};});
-  }
+  changeIsRunning = () => {
+    this.setState((state) => {
+      return { isRunning: !state.isRunning };
+    });
+  };
 
   render() {
-    const { counter, isAdd,isRunning } = this.state;
+    const { counter, isAdd, isRunning } = this.state;
     const { step } = this.props;
     return (
       <>
-        <div >
+        <div>
           <div>{counter}</div>
-          <CounterBtnSettings isAdd={isAdd} isRunning={isRunning} handleDirection={this.handleDirection} step={step} handleChengeStep={this.handleChengeStep}/>
-          <button disabled={isRunning}  onClick={this.handleIncrement}>Change</button>
+
+          <button disabled={isRunning} onClick={this.handleIncrement}>
+            Change
+          </button>
         </div>
-        <CounterAutoBtn count={this.count} step={step} isRunning={isRunning} changeIsRunning={this.changeIsRunning}/>
+        <CounterAutoBtn
+          count={this.count}
+          step={step}
+          isRunning={isRunning}
+          changeIsRunning={this.changeIsRunning}
+          isAdd={isAdd}
+          handleDirection={this.handleDirection}
+          handleChengeStep={this.handleChengeStep}
+        />
       </>
     );
   }

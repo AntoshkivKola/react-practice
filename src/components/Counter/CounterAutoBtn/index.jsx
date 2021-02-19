@@ -1,17 +1,18 @@
 import React, { Component } from "react";
 import CounterAutoBtnSettings from "../CounterAutoBtnSettings";
+import CounterSettings from "../CounterSettings";
 
 class CounterAutoBtn extends Component {
   constructor(props) {
     super(props);
-    this.state = { interval: 1, time: 5,  };
+    this.state = { interval: 1, time: 5 };
   }
 
   handleAutoClicker = () => {
     const { count, step, isRunning, changeIsRunning } = this.props;
     const { interval, time } = this.state;
 
-    if(isRunning){
+    if (isRunning) {
       return false;
     }
     changeIsRunning();
@@ -28,27 +29,41 @@ class CounterAutoBtn extends Component {
         operation = 0;
       }
     }, interval * 1000);
-
   };
 
-  
-
-  componentWillMount=()=>{
+  componentWillMount = () => {
     this.handleAutoClicker();
-  }
+  };
 
   handleChengeInterval = ({ target: { value, name } }) => {
     this.setState({ [name]: value });
   };
 
   render() {
-    const { interval, time,  } = this.state;
-    const {isRunning} = this.props;
-    
+    const { interval, time } = this.state;
+    const {
+      step,
+      handleChengeStep,
+      isAdd,
+      handleDirection,
+      isRunning,
+    } = this.props;
+
     return (
       <>
-        <CounterAutoBtnSettings interval={interval} isRunning={isRunning} time={time} handleChengeInterval={this.handleChengeInterval}/>
-        <button disabled={isRunning} onClick={this.handleAutoClicker}>AutoBtn</button>
+        <button disabled={isRunning} onClick={this.handleAutoClicker}>
+          AutoBtn
+        </button>
+        <CounterSettings
+          isAdd={isAdd}
+          isRunning={isRunning}
+          handleDirection={handleDirection}
+          step={step}
+          handleChengeStep={handleChengeStep}
+          interval={interval}
+          time={time}
+          handleChengeInterval={this.handleChengeInterval}
+        />
       </>
     );
   }

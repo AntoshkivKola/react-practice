@@ -1,0 +1,18 @@
+.containerHide{
+  display: none;
+}
+.containerShow{
+  display:flex;
+  position: absolute;
+  flex-direction:column;
+
+}
+.hideButton{
+  position: relative;
+  right: 0;
+  max-width: 50px;
+  max-height:50px;
+  text-align: center;
+  font-size:2rem;
+  color: rgb(23, 33, 184);
+}

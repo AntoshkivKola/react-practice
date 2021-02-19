@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 class CounterBtnSettings extends Component {
   render() {
     const {isAdd, isRunning,handleDirection, step,handleChengeStep} = this.props;
+   
     return (
       <>
         <div >
