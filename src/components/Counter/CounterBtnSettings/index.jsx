@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styles from "./CounterBtnSettings.module.css"
 
 class CounterBtnSettings extends Component {
   render() {
@@ -6,8 +7,8 @@ class CounterBtnSettings extends Component {
    
     return (
       <>
-        <div >
-            add?{" "}
+        <div className={styles.add}>
+            Add?{" "}
             <input
               type="checkbox"
               checked={isAdd}
@@ -15,9 +16,9 @@ class CounterBtnSettings extends Component {
               disabled={isRunning}
             />
           </div>
-          <div>
+          <div className={styles.count}>
             Will be {isAdd ? " + " : " - "}:{" "}
-            <input
+            <input 
               type="number"
               value={step}
               onChange={handleChengeStep}

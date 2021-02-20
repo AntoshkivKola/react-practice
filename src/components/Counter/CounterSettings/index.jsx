@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import CounterAutoBtnSettings from "../CounterAutoBtnSettings";
 import CounterBtnSettings from "../CounterBtnSettings";
 import styles from "./CounterSettings.module.css";
+import stylesBtn from "../Counter.module.css";
+
 
 class CounterSettings extends Component {
   constructor(props) {
@@ -49,7 +51,7 @@ class CounterSettings extends Component {
             handleChengeInterval={handleChengeInterval}
           />
         </div>
-        <button disabled={customize} onClick={this.handleSettingsShow}>
+        <button className={stylesBtn.btn} disabled={customize} onClick={this.handleSettingsShow}>
           Settings
         </button>
       </>

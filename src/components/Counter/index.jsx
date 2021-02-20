@@ -15,10 +15,10 @@ class Counter extends Component {
   render() {
     const { step } = this.state;
     return (
-      <div>
+      <>
         <CounterBtn step={step} count={this.count} setStep={this.setStep} />
        
-      </div>
+      </>
     );
   }
 }

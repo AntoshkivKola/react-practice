@@ -2,17 +2,25 @@
   display: none;
 }
 .containerShow{
-  display:flex;
   position: absolute;
+  display:flex;
   flex-direction:column;
-
+  margin-top: 50px;
+  padding: 20px;
+  background-color: rgb(139, 216, 180);
 }
 .hideButton{
-  position: relative;
+  margin-left: auto;
   right: 0;
-  max-width: 50px;
-  max-height:50px;
+  max-width: 30px;
+  max-height:30px;
+  outline: none;
+  border: 2px solid transparent;
   text-align: center;
-  font-size:2rem;
-  color: rgb(23, 33, 184);
+  background-color:rgb(207, 238, 236);
+  color: rgb(212, 105, 44);
+  cursor: pointer;
+}
+.hideButton:hover{
+  border: 2px solid rgb(3, 114, 105);
 }

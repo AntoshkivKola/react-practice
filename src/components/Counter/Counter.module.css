@@ -1,0 +1,23 @@
+.btnDisabled,
+.btn {
+  margin-bottom: 10px;
+  padding: 10px 25px;
+  outline: none;
+  border: 1px solid rgb(127, 214, 203);
+  text-transform: uppercase;
+  color: rgb(202, 238, 210);
+}
+
+.btn {
+  background-color: rgb(52, 190, 105);
+  cursor: pointer;
+}
+
+.btnDisabled {
+  background-color: gray;
+}
+
+.btn:hover {
+  border: 1px solid rgb(52, 190, 105);
+  background-color: rgb(24, 119, 106);
+}

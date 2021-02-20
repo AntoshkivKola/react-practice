@@ -1,13 +1,14 @@
 import React, { Component } from "react";
+import styles from "./CounterAutoBtnSettings.module.css"
 
 class CounterAutoBtnSettings extends Component {
   render() {
     const { time, isRunning, interval, handleChengeInterval } = this.props;
     return (
       <>
-        <div>
-          How time: {time}{" "}
-          <input
+        <div className={styles.range}>
+          How time: {time}{" "}s
+          <input 
             type="range"
             name="time"
             min={interval}
@@ -17,10 +18,9 @@ class CounterAutoBtnSettings extends Component {
             onChange={handleChengeInterval}
             disabled={isRunning}
           />
-          s
         </div>
-        <div>
-          How often: {interval}
+        <div className={styles.range}>
+          How often: {interval}s
           <input
             type="range"
             name="interval"
@@ -31,7 +31,7 @@ class CounterAutoBtnSettings extends Component {
             onChange={handleChengeInterval}
             disabled={isRunning}
           />{" "}
-          s
+          
         </div>
       </>
     );

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import CounterAutoBtnSettings from "../CounterAutoBtnSettings";
+import stylesBtn from "../Counter.module.css";
 import CounterSettings from "../CounterSettings";
 
 class CounterAutoBtn extends Component {
@@ -51,7 +51,11 @@ class CounterAutoBtn extends Component {
 
     return (
       <>
-        <button disabled={isRunning} onClick={this.handleAutoClicker}>
+        <button
+          className={isRunning ? stylesBtn.btnDisabled : stylesBtn.btn}
+          disabled={isRunning}
+          onClick={this.handleAutoClicker}
+        >
           AutoBtn
         </button>
         <CounterSettings

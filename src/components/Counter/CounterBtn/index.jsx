@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import CounterAutoBtn from "../CounterAutoBtn";
+import styles from "./CounterBtn.module.css";
+import stylesBtn from "../Counter.module.css";
 
 class CounterBtn extends Component {
   constructor(props) {
@@ -44,14 +46,17 @@ class CounterBtn extends Component {
     const { counter, isAdd, isRunning } = this.state;
     const { step } = this.props;
     return (
-      <>
-        <div>
-          <div>{counter}</div>
+      <div className={styles.container}>
+        <div className={styles.counter}>{counter}</div>
 
-          <button disabled={isRunning} onClick={this.handleIncrement}>
-            Change
-          </button>
-        </div>
+        <button
+          className={isRunning ? stylesBtn.btnDisabled : stylesBtn.btn}
+          disabled={isRunning}
+          onClick={this.handleIncrement}
+        >
+          Change
+        </button>
+
         <CounterAutoBtn
           count={this.count}
           step={step}
@@ -61,7 +66,7 @@ class CounterBtn extends Component {
           handleDirection={this.handleDirection}
           handleChengeStep={this.handleChengeStep}
         />
-      </>
+      </div>
     );
   }
 }
