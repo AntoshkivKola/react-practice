@@ -16,7 +16,7 @@ class Counter extends Component {
     const { step } = this.state;
     return (
       <>
-        <CounterBtn step={step} count={this.count} setStep={this.setStep} />
+        <CounterBtn step={step} setStep={this.setStep} />
        
       </>
     );

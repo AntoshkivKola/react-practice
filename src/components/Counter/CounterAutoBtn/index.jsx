@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import stylesBtn from "../Counter.module.css";
 import CounterSettings from "../CounterSettings";
+import PropTypes from 'prop-types';
 
 class CounterAutoBtn extends Component {
   constructor(props) {
@@ -73,4 +74,13 @@ class CounterAutoBtn extends Component {
   }
 }
 
+CounterAutoBtn.propTypes = {
+  count:  PropTypes.func.isRequired,
+  step: PropTypes.number.isRequired,
+  isRunning: PropTypes.bool.isRequired,
+  changeIsRunning: PropTypes.func.isRequired,
+  isAdd: PropTypes.bool,
+  handleDirection: PropTypes.func,
+  handleChengeStep: PropTypes.func,
+}
 export default CounterAutoBtn;

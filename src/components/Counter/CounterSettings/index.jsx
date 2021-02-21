@@ -3,7 +3,7 @@ import CounterAutoBtnSettings from "../CounterAutoBtnSettings";
 import CounterBtnSettings from "../CounterBtnSettings";
 import styles from "./CounterSettings.module.css";
 import stylesBtn from "../Counter.module.css";
-
+import PropTypes from "prop-types";
 
 class CounterSettings extends Component {
   constructor(props) {
@@ -36,7 +36,12 @@ class CounterSettings extends Component {
         <div
           className={customize ? styles.containerShow : styles.containerHide}
         >
-          <button className={styles.hideButton} onClick={this.handleSettingsHide}>X</button>
+          <button
+            className={styles.hideButton}
+            onClick={this.handleSettingsHide}
+          >
+            X
+          </button>
           <CounterBtnSettings
             isAdd={isAdd}
             isRunning={isRunning}
@@ -51,7 +56,11 @@ class CounterSettings extends Component {
             handleChengeInterval={handleChengeInterval}
           />
         </div>
-        <button className={stylesBtn.btn} disabled={customize} onClick={this.handleSettingsShow}>
+        <button
+          className={stylesBtn.btn}
+          disabled={customize}
+          onClick={this.handleSettingsShow}
+        >
           Settings
         </button>
       </>
@@ -59,4 +68,14 @@ class CounterSettings extends Component {
   }
 }
 
+CounterSettings.propTypes = {
+  isAdd: PropTypes.bool.isRequired,
+  isRunning: PropTypes.bool.isRequired,
+  handleDirection: PropTypes.func.isRequired,
+  step: PropTypes.number.isRequired,
+  handleChengeStep: PropTypes.func.isRequired,
+  interval: PropTypes.number.isRequired,
+  time: PropTypes.number.isRequired,
+  handleChengeInterval: PropTypes.func.isRequired,
+};
 export default CounterSettings;
