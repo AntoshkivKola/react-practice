@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./CounterBtnSettings.module.css";
+import styles from "./CounterBtnSettings.module.scss";
 import PropTypes from "prop-types";
 
 function CounterBtnSettings(props) {

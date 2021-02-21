@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import CounterAutoBtn from "../CounterAutoBtn";
-import styles from "./CounterBtn.module.css";
-import stylesBtn from "../Counter.module.css";
+import styles from "./CounterBtn.module.scss";
+import stylesBtn from "../Counter.module.scss";
 import PropTypes from 'prop-types';
 
 class CounterBtn extends Component {

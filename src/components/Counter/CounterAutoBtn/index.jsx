@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import stylesBtn from "../Counter.module.css";
+import stylesBtn from "../Counter.module.scss";
 import CounterSettings from "../CounterSettings";
 import PropTypes from 'prop-types';
 
